@@ -28,6 +28,7 @@ app.use(cors({
   origin:[
     "*",
     "http://localhost:8080",
+    "https://694m5khx-3000.usw3.devtunnels.ms/"
   ]
 }));
 app.use((req, res, next) => {
