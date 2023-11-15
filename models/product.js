@@ -129,7 +129,7 @@ class Product{
                     this.product_description, 
                     this.category_id, 
                     this.weight_class, 
-                    this.warranty_period, // Asegúrate de que esté en el formato correcto para Oracle
+                    this.warranty_period, 
                     this.supplier_id, 
                     this.product_status, 
                     this.list_price, 
@@ -177,7 +177,7 @@ class Product{
                     product_description: this.product_description,
                     category_id: this.category_id,
                     weight_class: this.weight_class,
-                    warranty_period: this.warranty_period, // Corregido aquí
+                    warranty_period: this.warranty_period, 
                     supplier_id: this.supplier_id,
                     product_status: this.product_status,
                     list_price: this.list_price,
