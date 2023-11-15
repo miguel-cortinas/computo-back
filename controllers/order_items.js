@@ -31,7 +31,7 @@ async function get(req,res,next){
     let order_id = req.params.id;
     try{
         redis = await Redis.create_connection();
-        const cachedOrderId = await redis.get(`order_items/${order_id}`);
+        const cachedOrderId = await redis.get(`order_items/${order_id}/${line_item_id}`);
         if(cachedOrderId){
             res.status(200).json(JSON.parse(cachedOrderId));    
         }else{
