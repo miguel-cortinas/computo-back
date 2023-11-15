@@ -20,7 +20,7 @@ class Product{
         let conn;
         try{
             conn = await oracledb.connectToDatabase();
-            const result = await conn.execute('SELECT product_id, product_name, product_description, category_id, weight_class, TO_CHAR(warranty_period), supplier_id, product_status, list_price, min_price, catalog_url FROM products');
+            const result = await conn.execute('SELECT product_id, product_name, product_description, category_id, weight_class, TO_CHAR(warranty_period), supplier_id, product_status, list_price, min_price, catalog_url FROM product_information');
             return result.rows.map(row=>{
                 return{
                     product_id:row[0],
@@ -49,7 +49,7 @@ class Product{
         let conn;
         try{
             conn = await oracledb.connectToDatabase();
-            const result = await conn.execute('SELECT product_id, product_name, product_description, category_id, weight_class, TO_CHAR(warranty_period), supplier_id, product_status, list_price, min_price, catalog_url FROM products WHERE product_id = :id', [id]);
+            const result = await conn.execute('SELECT product_id, product_name, product_description, category_id, weight_class, TO_CHAR(warranty_period), supplier_id, product_status, list_price, min_price, catalog_url FROM product_information WHERE product_id = :id', [id]);
             if(result.rows.length>0){
                 const row = result.rows[0];
                 return{
@@ -81,7 +81,7 @@ class Product{
         let conn;
         try{
             conn = await oracledb.connectToDatabase();
-            await conn.execute('DELETE from products WHERE product_id = :product_id',[product_id]);
+            await conn.execute('DELETE from product_information WHERE product_id = :product_id',[product_id]);
             await conn.execute('COMMIT');
             return 'Deleted';
         }catch(err){

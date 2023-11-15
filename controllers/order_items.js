@@ -67,7 +67,7 @@ async function destroy(req,res,next){
     
     }catch(err){
         console.log(err);
-        res.status(500).send('Error al eliminar el OI');
+        res.status(500).send('Error al eliminar el Order Items');
     }finally{
         if(redis){
             await Redis.close_conection(redis);
