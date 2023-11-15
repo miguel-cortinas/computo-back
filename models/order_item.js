@@ -58,9 +58,6 @@ class Order_Items{
             }
         }
     }
-
-
-    //crete
     async save(){
         let conn;
         try{
@@ -83,7 +80,6 @@ class Order_Items{
             }
         }
     }
-    //update
     async update(){
         let conn;
         try {
@@ -109,7 +105,6 @@ class Order_Items{
             }
         }
     }
-    //delete
     static async destroy(order_id,line_item_id){
         let conn;
         try {

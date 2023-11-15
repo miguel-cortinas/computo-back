@@ -27,12 +27,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
   origin:[
     "*",
-    "localhost:8080",
+    "http://localhost:8080",
   ]
 }));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT,DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 })
